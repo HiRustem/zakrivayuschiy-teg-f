@@ -8,5 +8,11 @@
     --card-text-weight: 400;
 
     --background-color: #fff;
+    --background-gradient:
+        repeating-linear-gradient(to left, #d3d3d3 2px, transparent 4px),
+        repeating-linear-gradient(to bottom, #e7e7e7 2px, #1a1a1a 4px);
+
     --accent-color: #000;
+
+    --content-width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
 }
