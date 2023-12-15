@@ -15,6 +15,8 @@
         repeating-linear-gradient(to bottom, #e7e7e7 2px, #1a1a1a 4px);
         
     --accent-color: #000;
+
+    --text-stroke-color: #fff;
 }
 
 :root.theme-dark {
@@ -27,6 +29,8 @@
         repeating-linear-gradient(to bottom, #007f0c 2px, #004306 4px);
 
     --accent-color: #00cc14;
+
+    --text-stroke-color: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,5 +44,7 @@
             repeating-linear-gradient(to bottom, #007f0c 2px, #004306 4px);
 
         --accent-color: #00cc14;
+
+        --text-stroke-color: #000;
     }
 }
