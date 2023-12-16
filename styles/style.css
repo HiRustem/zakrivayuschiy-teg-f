@@ -78,6 +78,8 @@
 }
 
 .theme-menu__button {
+  position: relative;
+
   display: flex;
 
   margin-inline-start: 20px;
@@ -90,10 +92,38 @@
   text-transform: uppercase;
 
   cursor: pointer;
+
+  transition: opacity .3s ease;
+}
+
+.theme-menu__button::after {
+  position: absolute;
+
+  inset-block-end: -3px;
+
+  content: '';
+
+  display: block;
+  
+  inline-size: 100%;
+  block-size: 3px;
+
+  background-color: var(--accent-color);
+
+  opacity: .6;
+
+  transform-origin: 0%;
+  transform: scaleX(0);
+
+  transition: transform .3s;
 }
 
 .theme-menu__button:disabled {
   margin-inline-start: 0;
+
+  opacity: .6;
+
+  pointer-events: none;
 }
 
 .theme-menu__button:disabled::before {
@@ -103,16 +133,29 @@
   block-size: 14px;
 
   margin-inline-end: 5px;
+
+  animation: arrow-animation .5s ease-in-out alternate infinite;
 }
 
-.cards-list {
-  display: flex;
-  flex-direction: column;
+.theme-menu__button:hover {
+  opacity: .6;
+}
 
-  gap: 50px;
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: .6;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .card {
+  margin-block-end: 50px;
+
   background-color: var(--background-color);
 
   border: 2px solid var(--accent-color);
@@ -188,19 +231,29 @@
   align-items: center;
   justify-content: end;
 
-  gap: 12px;
+  gap: 7px;
 }
 
 .card__icon-button {
-  block-size: 24px;
-  inline-size: 27px;
+  block-size: 36px;
+  inline-size: 39px;
 
   padding: 0;
 
   background-color: transparent;
   border: transparent;
 
+  transition: outline .3s ease;
+
   cursor: pointer;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color);
 }
 
 .like-icon path {
@@ -208,14 +261,102 @@
 }
 
 .card__like-button {
-  padding: 10.5px 35px;
+  position: relative;
+
+  padding: 6.5px 35px;
 
   background-color: transparent;
   border: 2px solid var(--accent-color);
+
+  color: var(--button-text-color);
+
+  transition: box-shadow 0.3s;
+
+  cursor: pointer;
+}
+
+.button__text {
+  position: relative;
 
   font-family: "Press Start 2P";
   font-size: 14px;
   line-height: 90%;
 
+  mix-blend-mode: difference;
+
+  transition: mix-blend-mode .5s;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+
+  margin-block-end: 100px;
+}
+
+.save-button {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  align-items: center;
+
+  padding: 15px 20px;
+
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+
+  color: var(--button-text-color);
+
+  transition: box-shadow 0.3s;
+
   cursor: pointer;
+}
+
+.save-icon {
+  inline-size: 28px;
+
+  mix-blend-mode: difference;
+
+  transition: mix-blend-mode .5s;
+}
+
+.card__like-button:focus,
+.save-button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible,
+.save-button:focus-visible {
+  box-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.card__like-button::before,
+.save-button::before {
+  content: '';
+
+  position: absolute;
+  inset: 0;
+
+  inline-size: 100%;
+  block-size: 100%;
+
+  background-color: var(--accent-color);
+
+  transform-origin: 0%;
+  transform: scaleX(0);
+
+  transition: transform .5s ease-in-out;
+}
+
+.card__like-button:hover::before,
+.save-button:hover::before {
+  transform: scaleX(1);
+}
+
+.card__like-button:hover .button__text {
+  z-index: 2;
 }

@@ -17,6 +17,8 @@
     --accent-color: #000;
 
     --text-stroke-color: #fff;
+
+    --button-text-color: #fff;
 }
 
 :root.theme-dark {
@@ -31,6 +33,8 @@
     --accent-color: #00cc14;
 
     --text-stroke-color: #000;
+
+    --button-text-color: #00cc14;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,5 +50,7 @@
         --accent-color: #00cc14;
 
         --text-stroke-color: #000;
+
+        --button-text-color: #00cc14;
     }
 }
