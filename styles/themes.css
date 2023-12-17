@@ -19,6 +19,9 @@
     --text-stroke-color: #fff;
 
     --button-text-color: #fff;
+
+    --like-icon-countour: #000;
+    --like-icon-filling: #ff0000;
 }
 
 :root.theme-dark {
@@ -35,6 +38,9 @@
     --text-stroke-color: #000;
 
     --button-text-color: #00cc14;
+
+    --like-icon-countour: #00cc14;
+    --like-icon-filling: #ff0000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -52,5 +58,8 @@
         --text-stroke-color: #000;
 
         --button-text-color: #00cc14;
+
+        --like-icon-countour: #00cc14;
+        --like-icon-filling: #ff0000;
     }
 }
