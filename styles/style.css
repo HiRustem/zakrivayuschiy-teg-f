@@ -327,11 +327,10 @@
   animation: like-icon-sparks .3s .3s ease-in;
 }
 
-.card__like-button {
+.button {
   position: relative;
 
-  block-size: 38px;
-  inline-size: 130px;
+  padding: 0;
 
   background-color: transparent;
   border: 2px solid var(--accent-color);
@@ -343,6 +342,11 @@
   text-transform: uppercase;
 
   cursor: pointer;
+}
+
+.card__like-button {
+  block-size: 38px;
+  inline-size: 130px;
 }
 
 .button__text {
@@ -365,8 +369,6 @@
 }
 
 .save-button {
-  position: relative;
-
   display: flex;
   flex-direction: column;
 
@@ -377,13 +379,6 @@
   padding: 15px 20px;
 
   background-color: var(--background-color);
-  border: 2px solid var(--accent-color);
-
-  color: var(--button-text-color);
-
-  transition: box-shadow 0.3s;
-
-  cursor: pointer;
 }
 
 .save-icon {
@@ -394,18 +389,19 @@
   transition: mix-blend-mode .5s;
 }
 
-.card__like-button:focus,
-.save-button:focus {
+.save-button .button__text {
+  text-transform: none;
+}
+
+.button:focus {
   outline: none;
 }
 
-.card__like-button:focus-visible,
-.save-button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px 0px var(--accent-color);
 }
 
-.card__like-button::before,
-.save-button::before {
+.button::before {
   content: '';
 
   position: absolute;
@@ -422,23 +418,69 @@
   transition: transform .5s ease-in-out;
 }
 
-.card__like-button:hover::before,
-.save-button:hover::before {
+.button:hover::before {
   transform: scaleX(1);
 }
 
-.card__like-button:hover .button__text {
+.button:hover .button__text {
   z-index: 2;
 }
 
 .save-dialog {
-  
+  inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
+
+  padding: 30px;
+
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
 }
 
 .save-dialog::backdrop {
+  background-color: rgba(0, 0, 0, .75);
+}
 
+.save-dialog .save-icon {
+  inline-size: 39px;
+  block-size: 39px;
+
+  color: var(--accent-color);
+
+  mix-blend-mode: normal;
+}
+
+.save-dialog__description {
+  display: grid;
+  gap: 20px;
+
+  grid-template-columns: min-content 1fr;
+
+  align-items: center;
+
+  margin-block-end: 30px;
+
+  text-transform: uppercase;
+}
+
+.save-dialog__text {
+  font-family: 'Press Start 2P';
+  font-size: 14px;
+  line-height: 150%;
+
+  color: var(--accent-color);
 }
 
 .save-dialog__button {
   inline-size: 100%;
+
+  padding-block: 12.5px;
+}
+
+@media (width > 768px) {
+  .save-button {
+    flex-direction: row;
+  }
+
+  .save-icon {
+    inline-size: 21px;
+  }
 }
