@@ -17,7 +17,7 @@
 
   <body class="page">
     <header class="header content">
-      <p class="header__logo">&lt;/HTML&gt;</p>
+      <a class="header__logo">&lt;/HTML&gt;</a>
       <h1 class="header__title">закрывающий тег</h1>
       <nav class="theme-menu header__theme-menu">
         <!-- Не меняйте разметку этого списка, иначе скрипты перестанут работать -->
@@ -440,17 +440,19 @@
       </button>
 
       <dialog id="save-dialog" class="save-dialog">
-        <div class="save-dialog__description">
-          <svg class="save-icon" viewBox="0 0 29 28">
-            <use href="./svg/floppy.svg#floppy">
-          </svg>
-          
-          <p class="save-dialog__text">Вставьте дискету, чтобы продолжить</p>
-        </div>
-
-        <button class="button save-dialog__button" type="button" onclick="window['save-dialog'].close()" aria-controls="save-dialog">
-          <span class="button__text">Ок</span>
-        </button>
+        <form method="dialog">
+          <div class="save-dialog__description">
+            <svg class="save-icon" viewBox="0 0 29 28">
+              <use href="./svg/floppy.svg#floppy">
+            </svg>
+            
+            <p class="save-dialog__text">Вставьте дискету, чтобы продолжить</p>
+          </div>
+  
+          <button class="button save-dialog__button" type="submit">
+            <span class="button__text">Ок</span>
+          </button>
+        </form>
       </dialog>
     </footer>
     <script src="./scripts/like.js"></script>

@@ -456,7 +456,7 @@
   z-index: 2;
 }
 
-.save-dialog {
+.save-dialog[open] {
   inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
 
   padding: 30px;
