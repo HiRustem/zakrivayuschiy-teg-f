@@ -2,15 +2,16 @@
 
 :root {
     --main-font-family: 'Inter';
-    --accent-font-family: 'PressStart2P';
+    --accent-font-family: 'Press Start 2P';
 
     --card-heading-weight: 700;
     --card-text-weight: 400;
 
     --background-color: #fff;
     --background-gradient:
-        repeating-linear-gradient(to left, #d3d3d3 2px, transparent 4px),
-        repeating-linear-gradient(to bottom, #e7e7e7 2px, #1a1a1a 4px);
+        repeating-linear-gradient(to left, #d3d3d3 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+        repeating-linear-gradient(to bottom, #e7e7e7 .01%, #1a1a1a 100%);
 
     --accent-color: #000;
 

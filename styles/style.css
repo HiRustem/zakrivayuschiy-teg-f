@@ -21,7 +21,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 
-  font-family: "Inter-Variable", sans-serif;
+  font-family: var(--main-font-family), sans-serif;
   font-variation-settings: "wght" var(--card-text-weight);
   font-size: 18px;
   color: var(--accent-color);
@@ -43,7 +43,7 @@
 
   border: 2px solid var(--accent-color);
 
-  font-family: "Press Start 2P";
+  font-family: var(--accent-font-family), fantasy;
 
   text-transform: uppercase;
 }
@@ -229,7 +229,7 @@
 
   mix-blend-mode: hard-light;
 
-  font-family: "Press Start 2P";
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
 
   opacity: 0.5;
@@ -247,6 +247,8 @@
 
 .card__content {
   padding: 25px;
+
+  line-height: 116%;
 }
 
 .card__description-text {
@@ -382,7 +384,7 @@
 .button__text {
   position: relative;
 
-  font-family: "Press Start 2P";
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   line-height: 90%;
 
@@ -457,7 +459,9 @@
 }
 
 .save-dialog[open] {
-  inline-size: clamp(21.3125rem, 20.9604rem + 1.5023vw, 22.3125rem);
+  display: block;
+
+  max-inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
 
   padding: 30px;
 
@@ -492,7 +496,7 @@
 }
 
 .save-dialog__text {
-  font-family: 'Press Start 2P';
+  font-family: var(--accent-font-family), fantasy;
   font-size: 14px;
   line-height: 150%;
 
@@ -502,7 +506,7 @@
 .save-dialog__button {
   inline-size: 100%;
 
-  padding-block: 12.5px;
+  padding-block: 6.5px;
 
   text-transform: uppercase;
 }
