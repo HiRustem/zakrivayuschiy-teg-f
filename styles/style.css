@@ -184,10 +184,42 @@
   object-fit: cover;
 }
 
+.bright-image {
+  filter: brightness(130%);
+}
+
+.contrast-image {
+  filter: contrast(150%);
+}
+
+.saturate-image {
+  filter: saturate(30%);
+}
+
+.sepia-image {
+  filter: sepia(60%);
+}
+
+.sepia-and-bright-image {
+  filter: sepia(20%) brightness(110%);
+}
+
+.hue-rotate-image {
+  filter: hue-rotate(30deg);
+}
+
+.blur-image {
+  filter: blur(2px) brightness(60%);
+}
+
+.invert-image {
+  filter: invert(15%);
+}
+
 .card__image-sign {
   position: absolute;
 
-  inset-inline-end: 11px;
+  inset-inline-end: 13px;
   inset-block-start: 25px;
 
   mix-blend-mode: hard-light;
@@ -207,7 +239,7 @@
   (text-stroke: 1px var(--text-stroke-color)) {
   .card__image-sign {
     -webkit-text-stroke: 1px var(--text-stroke-color);
-    text-stroke: 1px var(--text-stroke-color);
+    -webkit-text-stroke: 1px var(--text-stroke-color);
 
     text-shadow: none;
   }
@@ -338,8 +370,6 @@
   color: var(--button-text-color);
 
   transition: box-shadow 0.3s;
-
-  text-transform: uppercase;
 
   cursor: pointer;
 }
@@ -473,6 +503,8 @@
   inline-size: 100%;
 
   padding-block: 12.5px;
+
+  text-transform: uppercase;
 }
 
 @media (width > 768px) {
@@ -482,5 +514,9 @@
 
   .save-icon {
     inline-size: 21px;
+  }
+
+  .card__image-sign {
+    inset-inline-end: 25px;
   }
 }
