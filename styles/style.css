@@ -239,7 +239,7 @@
   (text-stroke: 1px var(--text-stroke-color)) {
   .card__image-sign {
     -webkit-text-stroke: 1px var(--text-stroke-color);
-    -webkit-text-stroke: 1px var(--text-stroke-color);
+    text-stroke: 1px var(--text-stroke-color);
 
     text-shadow: none;
   }
